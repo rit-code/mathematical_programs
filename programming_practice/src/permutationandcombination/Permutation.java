@@ -9,6 +9,9 @@ public class Permutation {
 
         Set<String> collector = new HashSet<>();
         int constant = args[0].length() - Integer.parseInt(args[1]);
+        if (constant < 0) {
+            throw new RuntimeException("Invalid input for 2nd parameter");
+        }
         stringPermuteAndPrint(collector, "", args[0], constant);
         System.out.print("Possible permutation for entry " + "'" + args[0] + "'" + " for a set of " + args[1] + " is : ");
         for (String entry : collector) {
